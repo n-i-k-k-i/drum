@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drum Kit Project</title>
+</head>
+<style>
+    body{
+        text-align: center;
+        background-image: url(img/200.jpg);
+        background-size: 1280px;
+    }
+        h1{
+            color: rgb(221, 32, 180);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: xxx-large;
+            text-shadow: rgb(84, 8, 65) 1px 3px 2px;
+        }
+        .w{
+            background-image: url(img/tom1.png);
+            background-size: cover;
+            width: 150px;
+            height: 150px;
+            border-radius: 75px;
+            margin-right: 15px;
+            color: gold;
+            font-size: xx-large;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            text-shadow: goldenrod 1px 2px 1px;
+
+        }
+        .a{
+            background-image: url(img/tom2.png);
+            background-size: cover;
+            width: 150px;
+            height: 150px;
+            border-radius: 75px;
+            margin-right: 15px;
+            color: gold;
+            font-size: xx-large;
+            font-family: Arial, Helvetica, sans-serif;
+            text-shadow: goldenrod 1px 2px 1px;
+        }
+        .s{
+            background-image: url(img/tom3.png);
+            background-size: cover;
+            width: 150px;
+            height: 150px;
+            border-radius: 75px;
+            margin-right: 15px;
+            color: gold;
+            font-size: xx-large;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            text-shadow: goldenrod 1px 2px 1px;
+        }
+        .d{
+            background-image: url(img/tom4.png);
+            background-size: cover;
+            width: 150px;
+            height: 150px;
+            border-radius: 75px;
+            margin-right: 15px;
+            color: gold;
+            font-size: xx-large;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-shadow: goldenrod 1px 2px 1px;
+        }
+        .j{
+            background-image: url(img/crash.png);
+            background-size: cover;
+            width: 150px;
+            height: 150px;
+            border-radius: 75px;
+            margin-right: 15px;
+            color: gold;
+            font-size: xx-large;
+            font-family: Arial, Helvetica, sans-serif;
+            text-shadow: goldenrod 1px 2px 1px;
+        }
+        .k{
+            background-image: url(img/snare.png);
+            background-size: cover;
+            width: 150px;
+            height: 150px;
+            border-radius: 75px;
+            margin-right: 15px;
+            color: gold;
+            font-size: xx-large;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-shadow: goldenrod 1px 2px 1px;
+        }
+        .l{
+            width: 150px;
+            height: 150px;
+            border-radius: 75px;
+            margin-right: 15px;
+            background-image: url(img/kick.png);
+            background-size: cover;
+            color: gold;
+            font-size: xx-large;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            text-shadow: goldenrod 1px 2px 1px;
+        }
+
+
+            
+
+</style>
+<body>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  
+    <h1>DJ Tillu</h1>
+    <div class="set">
+        <button class="w drum">W</button>
+        <button class="a drum">A</button>
+        <button class="s drum">S</button>
+        <button class="d drum">D</button>
+        <button class="j drum">J</button>
+        <button class="k drum">K</button>
+        <button class="l drum">L</button>
+
+    </div>
+
+<script>
+    var numberofbuttons =  document.querySelectorAll(".drum");
+    for(var i=0;i<numberofbuttons;i++){
+            document.querySelectorAll(".drum")[i].addEventListener("click",function(){
+                var buttonInnerHTML=this.innerHTML;
+                makeSound(buttonInnerHTML);
+            });
+        }
+        document.addEventListener('keydown',function(event){
+            makeSound(event.key);
+        });
+        function makeSound(key){
+            switch(key){
+                case "w":
+                    var tom1=new Audio('sound/tom-1.mp3');
+                    tom1.play();
+                    break;
+
+                    case "a":
+                    var tom2=new Audio('sound/tom-2.mp3');
+                    tom2.play();
+                    break;
+
+                    case "s":
+                    var tom3=new Audio('sound/tom-3.mp3');
+                    tom3.play();
+                    break;
+
+                    case "d":
+                    var tom4=new Audio('sound/tom-4.mp3');
+                    tom4.play();
+                    break;
+
+                    case "j":
+                    var crash=new Audio('sound/crash.mp3');
+                    crash.play();
+                    break;
+
+                    case "k":
+                    var snare=new Audio('sound/snare.mp3');
+                    snare.play();
+                    break;
+
+                    case "l":
+                    var kick=new Audio('sound/kick-bass.mp3');
+                    kick.play();
+                    break;
+            }
+        }
+
+</script>
+    
+</body>
+</html>
